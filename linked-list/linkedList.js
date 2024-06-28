@@ -93,19 +93,36 @@ class LinkedList {
         return removedNode.value;
     }
 
-    removeValue() {
-        
+    reverse() {
+        if (this.isEmpty()) {
+            console.log("List is empty");
+        } else if (this.head.next === null) {
+            console.log(this.head.value);
+        } else {
+            let curr = this.head;
+            let prev = null;
+            let next = null;
+            while (curr) {
+                next = curr.next;
+                curr.next = prev;
+                prev = curr;
+                this.head = curr;
+                curr = next;
+            }
+        }
     }
 
     print() {
         if (this.isEmpty()) {
             console.log("List is empty");
         } else {
+            let str = "";
             let curr = this.head;
             while (curr) {
-                console.log(`${curr.value} `);
+                str += `${curr.value} `;
                 curr = curr.next;
             }
+            console.log(str);
         }
     }
 }
@@ -126,5 +143,9 @@ list.append(40);
 list.append(50);
 
 list.prepend(60);
+
+list.print();
+
+list.reverse();
 
 list.print();
