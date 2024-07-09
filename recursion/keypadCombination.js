@@ -12,13 +12,8 @@ const keypad = [
 ];
 
 function keypadCombination(input) {
-    if (input.length === 1) {
-        const lastInput = keypad[input];
-        const temp = [];
-        for (let i = 0; i < lastInput.length; i++) {
-            temp.push(lastInput[i]);
-        }
-        return temp;
+    if (input.length === 0) {
+        return [""];
     }
 
     const firstInput = input.charAt(0);
