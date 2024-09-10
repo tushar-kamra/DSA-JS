@@ -21,10 +21,12 @@ const sumOf2Array = (arr1, arr2) => {
         sum[maxSize--] = ans;
     }
 
+    if (carry) sum.unshift(carry);
+
     console.log(sum);
 };
 
-const arr1 = [3, 6, 8, 0, 9, 8, 1];
-const arr2 = [1, 2, 3, 4];
+const arr1 = [3];
+const arr2 = [9, 8];
 
 sumOf2Array(arr1, arr2);
