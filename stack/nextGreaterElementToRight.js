@@ -1,5 +1,6 @@
 // [2, 9, 5, 3, 12, 2, 1, 10]  =>  [9, 12, 12, 12, -1, 10, 10, -1]
 
+// right to left
 const nextGreaterElement = (arr) => {
     const st = [];
     for (let index = arr.length - 1; index >= 0; index--) {
@@ -22,6 +23,28 @@ const nextGreaterElement = (arr) => {
     }
 };
 
+// left to right
+const nextGreaterElement2 = (arr) => {
+    const st = [];
+    const ans = [];
+
+    for (let index = 0; index < arr.length; index++) {
+        const element = arr[index];
+
+        while (arr[st[0]] < element) {
+            ans[st.shift()] = element;
+        }
+
+        st.unshift(index);
+    }
+
+    while (st.length > 0) {
+        ans[st.shift()] = -1;
+    }
+
+    console.log(ans);
+};
+
 const arr = [2, 9, 5, 3, 12, 2, 1, 10];
 
-nextGreaterElement(arr);
+nextGreaterElement2(arr);
