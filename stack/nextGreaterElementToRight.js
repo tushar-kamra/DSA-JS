@@ -45,7 +45,6 @@ const nextGreaterElement2 = (arr) => {
     console.log(ans);
 };
 
-
 const nextGreaterElement2Optimized = (arr) => {
     const st = []; // Stack to store indices
     const ans = new Array(arr.length).fill(-1); // Initialize result array with -1
@@ -68,4 +67,6 @@ const nextGreaterElement2Optimized = (arr) => {
 
 const arr = [2, 9, 5, 3, 12, 2, 1, 10];
 
+nextGreaterElement(arr);
 nextGreaterElement2(arr);
+nextGreaterElement2Optimized(arr);
